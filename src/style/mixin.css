@@ -1,0 +1,66 @@
+/* 写成postcss的格式，不会被转换，使用var(--bgColor)等都原样显示了。。。 */
+$blue: #3190e8;
+$bgc: #e4e4e4;
+$fc: #fff;
+
+/* 背景图片地址和大小 */
+@define-mixin bgImg $url {
+  background-image: url($url);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+/* border-radius */
+@define-mixin borderRadius $radius {
+  border-radius: $radius;
+}
+
+/* 全屏 */
+@define-mixin allCover {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+/* 上下左右居中 */
+@define-mixin center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* 上下居中 */
+@define-mixin hcenter {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* 左右居中 */
+@define-mixin hcenter {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@define-mixin wh $w: 100%, $h: 100% {
+  width: $w;
+  height: $h;
+}
+
+@define-mixin fsColor $fontSize, $color: #fff {
+  font-size: $fontSize;
+  color: $color;
+}
+
+@define-mixin fslh $size, $lineHeight, $family: 'Microsoft YaHei' {
+  font-size: $size;
+  line-height: $lineHeight;
+  font-family: $family;
+}
+
+@define-mixin flexj $type: space-between {
+  display: flex;
+  justify-content: $type;
+}
