@@ -3,6 +3,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import FastClick from 'fastclick';
+import '@/utils/rem'; // 导入rem和px的转转工具，否则显示的文字较小。
 
 import App from './App';
 import routes from './router/';
