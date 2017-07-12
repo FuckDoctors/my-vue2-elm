@@ -13,7 +13,7 @@ export default {
     commit,
   }) {
     const res = await getUser();
-    commit(GET_USERINFO, res);
+    commit(GET_USERINFO, res.data);
   },
 
   async saveAddress({
@@ -22,7 +22,7 @@ export default {
   }) {
     if (state.removeAddress.length > 0) return;
 
-    const addres = await getAddressList(state.userInfo.user_id);
-    commit(SAVE_ADDRESS, addres);
+    const res = await getAddressList(state.userInfo.user_id);
+    commit(SAVE_ADDRESS, res.data);
   },
 };

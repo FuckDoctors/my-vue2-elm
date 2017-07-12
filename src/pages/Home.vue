@@ -1,6 +1,6 @@
 <template>
   <div>
-    <top-header signin-up='home'>
+    <top-header signin-up="home">
       <span slot='logo' class="head_logo" @click="reload">ele.me</span>
     </top-header>
     <nav class="city_nav">
@@ -58,18 +58,18 @@ export default {
   mounted() {
     // 获取当前城市
     guessCity().then((res) => {
-      this.guessCity = res.name;
-      this.guessCityid = res.id;
+      this.guessCity = res.data.name;
+      this.guessCityid = res.data.id;
     });
 
     // 获取热门城市
     hotCities().then((res) => {
-      this.hotCities = res;
+      this.hotCities = res.data;
     });
 
     // 获取所有城市
     groupCities().then((res) => {
-      this.groupCities = res;
+      this.groupCities = res.data;
     });
   },
 
@@ -109,7 +109,7 @@ export default {
   font-size: 0.7rem;
   color: #fff;
   @mixin wh 2.3rem, 0.7rem;
-  @mixin hcenter;
+  @mixin vcenter;
 }
 
 .city_nav {

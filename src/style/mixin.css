@@ -31,7 +31,7 @@ $fc: #fff;
 }
 
 /* 上下居中 */
-@define-mixin hcenter {
+@define-mixin vcenter {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);

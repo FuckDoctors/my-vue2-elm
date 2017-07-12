@@ -7,7 +7,7 @@
         <polyline points="12,18 4,9 12,0" style="fill:none;stroke:rgb(255,255,255);stroke-width:2" />
       </svg>
     </section>
-    <router-link :to="userInfo? '/profile':'/login'" v-if='signinUp' class="head_login">
+    <router-link :to="userInfo ? '/profile':'/login'" v-if='signinUp' class="head_login">
       <svg class="user_avatar" v-if="userInfo">
         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#user"></use>
       </svg>
@@ -75,7 +75,7 @@ export default {
   right: 0.55rem;
   font-size: 0.65rem;
   color: #fff;
-  @mixin hcenter;
+  @mixin vcenter;
   .login_span {
     color: #fff;
   }
