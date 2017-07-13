@@ -2,6 +2,7 @@ import Home from '@/pages/home/Home';
 import City from '@/pages/city/City';
 import Login from '@/pages/login/Login';
 import Forgot from '@/pages/login/Forgot';
+import msite from '@/pages/msite/msite';
 
 export default [
   {
@@ -24,5 +25,9 @@ export default [
     path: '/forgot',
     name: 'forgot',
     component: Forgot,
+  }, {
+    path: '/msite',
+    name: 'msite',
+    component: msite,
   },
 ];

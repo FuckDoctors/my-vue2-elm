@@ -47,7 +47,7 @@
     </ul>
     <ul v-else class="animation_opactiy">
       <li class="list_back_li" v-for="item in 10" :key="item">
-        <img src="../../images/shopback.svg" class="list_back_svg">
+        <img src="../../assets/images/shopback.svg" class="list_back_svg">
       </li>
     </ul>
     <p v-if="touchend" class="empty_data">没有更多了</p>

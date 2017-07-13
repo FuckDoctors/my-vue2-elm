@@ -27,7 +27,7 @@ export const loadMore = {
 
         const moveEnd = () => {
           requestFram = requestAnimationFrame(() => {
-            if (scrollEl.scrollTop != oldScrollTop) {
+            if (scrollEl.scrollTop !== oldScrollTop) {
               oldScrollTop = scrollEl.scrollTop;
               moveEnd();
             } else {

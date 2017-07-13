@@ -185,7 +185,7 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-@import './style/mixin.css';
+@import '../../style/mixin.css';
 
 #foot_guide {
   background-color: #fff;
