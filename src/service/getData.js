@@ -158,7 +158,7 @@ export const mobileCode = phone => fetch('/v4/mobile/verify_code/send', {
 /**
  * 获取图片验证码
  */
-export const getcaptchas = () => fetch('/v1/captchas', {}, 'POST');
+export const getCaptchas = () => fetch('/v1/captchas', {}, 'POST');
 
 /**
  * 检测帐号是否存在

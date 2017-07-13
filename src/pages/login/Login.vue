@@ -44,7 +44,7 @@
       注册过的用户可凭账号密码登录
     </p>
     <div class="login_container" @click="mobileLogin">登录</div>
-    <router-link to="/forget" class="to_forget" v-if="!loginWay">重置密码？</router-link>
+    <router-link to="/forgot" class="to_forget" v-if="!loginWay">重置密码？</router-link>
     <alert-tip v-if="showAlert" :showHide="showAlert" @closeTip="closeTip" :alertText="alertText"></alert-tip>
   </div>
 </template>
@@ -53,7 +53,7 @@
 import topHeader from '@/components/header/Header';
 import alertTip from '@/components/common/AlertTip';
 import { mapMutations } from 'vuex';
-import { mobileCode, checkExsis, sendLogin, getcaptchas, accountLogin } from '@/service/getData';
+import { mobileCode, checkExsis, sendLogin, getCaptchas, accountLogin } from '@/service/getData';
 
 export default {
   data() {
@@ -100,7 +100,7 @@ export default {
     },
     // 获取验证吗，线上环境使用固定的图片，生产环境使用真实的验证码
     async getCaptchaCode() {
-      const res = await getcaptchas();
+      const res = await getCaptchas();
       this.captchaCodeImg = res.data.code;
     },
     // 获取短信验证码

@@ -123,11 +123,11 @@ export default {
     line-height: 1.45rem;
     padding: 0 0.45rem;
     span:nth-of-type(1) {
-      @mixin fsColor 0.55rem, #666;
+      @mixin fsc 0.55rem, #666;
     }
     span:nth-of-type(2) {
       font-weight: 900;
-      @mixin fsColor 0.475rem, #9f9f9f;
+      @mixin fsc 0.475rem, #9f9f9f;
     }
   }
   .guess_city {
@@ -176,7 +176,7 @@ export default {
   border-bottom: 1px solid $bgc;
   @mixin fslh 0.55rem, 1.45rem, 'Helvetica Neue';
   span {
-    @mixin fsColor 0.475rem, #999;
+    @mixin fsc 0.475rem, #999;
   }
 }
 

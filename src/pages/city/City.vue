@@ -118,7 +118,7 @@ export default {
 
 .change_city {
   right: 0.4rem;
-  @mixin fsColor 0.6rem, #fff;
+  @mixin fsc 0.6rem, #fff;
   @mixin vcenter;
 }
 

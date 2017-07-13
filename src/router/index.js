@@ -1,6 +1,7 @@
 import Home from '@/pages/home/Home';
 import City from '@/pages/city/City';
 import Login from '@/pages/login/Login';
+import Forgot from '@/pages/login/Forgot';
 
 export default [
   {
@@ -19,5 +20,9 @@ export default [
     path: '/login',
     name: 'login',
     component: Login,
+  }, {
+    path: '/forgot',
+    name: 'forgot',
+    component: Forgot,
   },
 ];

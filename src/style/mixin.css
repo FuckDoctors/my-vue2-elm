@@ -49,11 +49,6 @@ $fc: #fff;
   height: $h;
 }
 
-@define-mixin fsColor $fontSize, $color: #fff {
-  font-size: $fontSize;
-  color: $color;
-}
-
 @define-mixin fsc $fontSize, $color: #fff {
   font-size: $fontSize;
   color: $color;
