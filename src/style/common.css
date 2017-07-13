@@ -1,3 +1,9 @@
+/* reset */
+/*
+  坑：原来的scss写法，figcaption后面有个逗号，去掉了还报错。改成postcss后没报错，但是这块的css不起作用。
+  还以为是整个common.css不起作用，误以为是vue的全局css不起作用，还调查了一些vue全局css的资料，感觉使用都没错。
+  隔了一天又调查了一下，发现这块的:hover是起作用的，唯独这块不起作用，再次确认了下代码，发现多了个逗号，删掉就正常了。。。
+ */
 body,
 div,
 span,
@@ -27,7 +33,7 @@ button,
 input,
 select,
 figure,
-figcaption,
+figcaption
 {
   padding: 0;
   margin: 0;
