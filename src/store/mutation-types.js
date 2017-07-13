@@ -1,7 +1,7 @@
 export const RECORD_ADDRESS = 'RECORD_ADDRESS'; // 记录当前经度纬度
 export const ADD_CART = 'ADD_CART'; // 加入购物车
 export const REDUCE_CART = 'REDUCE_CART'; // 移出购物车
-export const INIT_BUYCART = 'INIT_BUYCART';
+export const INIT_CART = 'INIT_CART';
 export const CLEAR_CART = 'CLEAR_CART';
 export const RECORD_SHOPDETAIL = 'RECORD_SHOPDETAIL';
 export const RECORD_USERINFO = 'RECORD_USERINFO';
@@ -17,7 +17,7 @@ export const SAVE_CART_ID_SIG = 'SAVE_CART_ID_SIG';
 export const SAVE_ORDER_PARAM = 'SAVE_ORDER_PARAM';
 export const CHANGE_ORDER_PARAM = 'CHANGE_ORDER_PARAM';
 export const ORDER_SUCCESS = 'ORDER_SUCCESS';
-export const SAVE_SHOPID = 'SAVE_SHOPID';
+export const SAVE_SHOP = 'SAVE_SHOP';
 export const SAVE_ORDER = 'SAVE_ORDER';
 export const OUT_LOGIN = 'OUT_LOGIN';
 export const RETSET_NAME = 'RETSET_NAME';

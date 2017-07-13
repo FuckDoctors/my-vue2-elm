@@ -18,14 +18,14 @@
     <section id="hot_city_container">
       <h4 class="city_title">热门城市</h4>
       <ul class="citylistul clear">
-        <router-link tag="li" v-for="item in hotCities" :to="'/city/' + item.id" :key="item.id">
+        <router-link tag="li" v-for="item in hotCities" :to="'/city/' + item.id" :key="item.id" class="ellipsis">
           {{item.name}}
         </router-link>
       </ul>
     </section>
     <section class="group_city_container">
       <ul class="letter_classify">
-        <li v-for="(value, key, index) in sortgroupCities" :key="key" class="letter_classify_li">
+        <li v-for="(value, key, index) in sortGroupCities" :key="key" class="letter_classify_li">
           <h4 class="city_title">{{key}}
             <span v-if="index == 0">（按字母排序）</span>
           </h4>
@@ -79,7 +79,7 @@ export default {
 
   computed: {
     // 将获取的数据按照A-Z字母开头排序
-    sortgroupCities() {
+    sortGroupCities() {
       const sortobj = {};
       for (let i = 65; i <= 90; i += 1) {
         if (this.groupCities[String.fromCharCode(i)]) {
@@ -101,14 +101,15 @@ export default {
 
 <style lang="postcss" scoped>
 /* 使用@import '@/style/mixin.css';错误，style里的@import不能使用@. */
-@import '../style/mixin.css';
+@import '../../style/mixin.css';
 
 .head_logo {
   left: 0.4rem;
   font-weight: 400;
   font-size: 0.7rem;
   color: #fff;
-  @mixin wh 2.3rem, 0.7rem;
+  /* @mixin wh 2.3rem, 0.7rem; */
+  @mixin wh 2.3rem, auto; /* logo文字没有垂直居中，height调整为auto */
   @mixin vcenter;
 }
 

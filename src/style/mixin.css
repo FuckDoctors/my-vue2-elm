@@ -54,6 +54,11 @@ $fc: #fff;
   color: $color;
 }
 
+@define-mixin fsc $fontSize, $color: #fff {
+  font-size: $fontSize;
+  color: $color;
+}
+
 @define-mixin fslh $size, $lineHeight, $family: 'Microsoft YaHei' {
   font-size: $size;
   line-height: $lineHeight;

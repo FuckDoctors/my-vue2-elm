@@ -1,20 +1,23 @@
-import Hello from '@/components/Hello';
-import HelloPostCSS from '@/pages/HelloPostCSS';
-
-import Home from '@/pages/Home';
+import Home from '@/pages/home/Home';
+import City from '@/pages/city/City';
+import Login from '@/pages/login/Login';
 
 export default [
   {
     path: '/',
-    name: 'Home',
+    name: 'home',
     component: Home,
   }, {
-    path: '/hello',
-    name: 'Hello',
-    component: Hello,
+    path: '/home',
+    name: 'home',
+    component: Home,
   }, {
-    path: '/hello-postcss',
-    name: 'HelloPostCSS',
-    component: HelloPostCSS,
+    path: '/city/:cityId',
+    name: 'City',
+    component: City,
+  }, {
+    path: '/login',
+    name: 'login',
+    component: Login,
   },
 ];

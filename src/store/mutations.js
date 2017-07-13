@@ -7,7 +7,7 @@ import {
   RECORD_ADDRESS,
   ADD_CART,
   REDUCE_CART,
-  INIT_BUYCART,
+  INIT_CART,
   CLEAR_CART,
   RECORD_SHOPDETAIL,
   RECORD_USERINFO,
@@ -23,7 +23,7 @@ import {
   SAVE_ORDER_PARAM,
   CHANGE_ORDER_PARAM,
   ORDER_SUCCESS,
-  SAVE_SHOPID,
+  SAVE_SHOP,
   SAVE_ORDER,
   OUT_LOGIN,
   RETSET_NAME,
@@ -47,77 +47,77 @@ export default {
   },
   // 加入购物车
   [ADD_CART](state, {
-    shopid,
-    category_id,
-    item_id,
-    food_id,
+    shopId,
+    categoryId,
+    itemId,
+    foodId,
     name,
     price,
     specs,
-    packing_fee,
-    sku_id,
+    packingFee,
+    skuId,
     stock,
   }) {
     const cart = state.cartList;
-    const shop = cart[shopid] || {};
-    cart[shopid] = shop;
-    const category = shop[category_id] || {};
-    shop[category_id] = category;
-    const item = category[item_id] || {};
-    category[item_id] = item;
-    if (item[food_id]) {
-      item[food_id].num += 1;
+    const shop = cart[shopId] || {};
+    cart[shopId] = shop;
+    const category = shop[categoryId] || {};
+    shop[categoryId] = category;
+    const item = category[itemId] || {};
+    category[itemId] = item;
+    if (item[foodId]) {
+      item[foodId].num += 1;
     } else {
-      item[food_id] = {
+      item[foodId] = {
         num: 1,
-        id: food_id,
+        id: foodId,
         name,
         price,
         specs,
-        packing_fee,
-        sku_id,
+        packingFee,
+        skuId,
         stock,
       };
     }
     state.cartList = { ...cart };
     // 存入localStorage
-    setStore('buyCart', state.cartList);
+    setStore('shoppingCart', state.cartList);
   },
   // 移出购物车
   [REDUCE_CART](state, {
-    shopid,
-    category_id,
-    item_id,
-    food_id,
+    shopId,
+    categoryId,
+    itemId,
+    foodId,
   }) {
     const cart = state.cartList;
-    const shop = (cart[shopid] || {});
-    const category = (shop[category_id] || {});
-    const item = (category[item_id] || {});
-    if (item && item[food_id]) {
-      if (item[food_id].num > 0) {
-        item[food_id].num -= 1;
+    const shop = (cart[shopId] || {});
+    const category = (shop[categoryId] || {});
+    const item = (category[itemId] || {});
+    if (item && item[foodId]) {
+      if (item[foodId].num > 0) {
+        item[foodId].num -= 1;
         state.cartList = { ...cart };
         // 存入localStorage
-        setStore('buyCart', state.cartList);
+        setStore('shoppingCart', state.cartList);
       } else {
         // 商品数量为0，则清空当前商品的信息
-        item[food_id] = null;
+        item[foodId] = null;
       }
     }
   },
   // 网页初始化时从本地缓存获取购物车数据
-  [INIT_BUYCART](state) {
-    const initCart = getStore('buyCart');
+  [INIT_CART](state) {
+    const initCart = getStore('shoppingCart');
     if (initCart) {
       state.cartList = JSON.parse(initCart);
     }
   },
   // 清空当前商品的购物车信息
-  [CLEAR_CART](state, shopid) {
-    state.cartList[shopid] = null;
+  [CLEAR_CART](state, shopId) {
+    state.cartList[shopId] = null;
     state.cartList = { ...state.cartList };
-    setStore('buyCart', state.cartList);
+    setStore('shoppingCart', state.cartList);
   },
   // 记录用户信息
   [RECORD_USERINFO](state, info) {
@@ -147,8 +147,8 @@ export default {
     });
   },
   // 保存商铺id
-  [SAVE_SHOPID](state, shopid) {
-    state.shopid = shopid;
+  [SAVE_SHOP](state, shopId) {
+    state.shopId = shopId;
   },
   // 记录订单页面用户选择的备注, 传递给订单确认页面
   [CONFIRM_REMARK](state, {

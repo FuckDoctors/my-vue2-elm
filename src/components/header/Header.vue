@@ -67,7 +67,8 @@ export default {
   left: 0.4rem;
   width: 0.6rem;
   height: 1rem;
-  line-height: 2.2rem;
+  /* line-height: 2.2rem; */
+  line-height: 2.5rem; /* 左箭头没有垂直居中，调整为2.5rem */
   margin-left: .4rem;
 }
 
