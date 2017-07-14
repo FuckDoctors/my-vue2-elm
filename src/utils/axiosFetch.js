@@ -10,16 +10,18 @@ import {
 // 使用这种export default时，不能使用import {fetch, fetch2}，不识别fetch，没指定名字。
 // 可以这样import，imprt {default as fetch} from xxx，
 // 或者使用import fetch, {fetch2} from xxx。
-export default (url = '', data = {}, type = 'GET') => {
+export default (url = '', data = {}, type = 'GET', options = {}) => {
   const reqType = type.toUpperCase();
   const reqUrl = `${baseUrl}${url}`;
 
   let p = null;
 
   if (reqType === 'GET') {
-    p = axios.get(reqUrl, {
+    const requestConfig = {
       params: { ...data },
-    });
+    };
+    const config = Object.assign(requestConfig, options);
+    p = axios.get(reqUrl, config);
   } else {
     const requestConfig = {
       url,
@@ -27,7 +29,8 @@ export default (url = '', data = {}, type = 'GET') => {
       data,
     };
 
-    p = axios(requestConfig);
+    const config = Object.assign(requestConfig, options);
+    p = axios(config);
   }
 
   return p;

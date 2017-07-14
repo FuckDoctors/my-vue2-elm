@@ -378,3 +378,10 @@ export const signout = () => fetch('/v2/signout');
  * 改密码
  */
 export const changePassword = (username, oldpassWord, newpassword, confirmpassword, captchaCode) => fetch('/v2/changepassword', { username, oldpassWord, newpassword, confirmpassword, captcha_code: captchaCode }, 'POST');
+
+/**
+ * 上传头像
+ */
+export const uploadAvatar = (userId, formData) => fetch(`/eus/v1/users/${userId}//avatar`, formData, 'POST', {
+  headers: { 'Content-Type': 'multipart/form-data' },
+});
