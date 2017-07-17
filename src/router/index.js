@@ -22,6 +22,10 @@ import Coupon from '@/pages/benefit/sub/Coupon';
 import Exchange from '@/pages/benefit/sub/Exchange';
 import HbDesciption from '@/pages/benefit/sub/HaobaoDescription';
 import HbHistory from '@/pages/benefit/sub/HaobaoHistory';
+import VipCard from '@/pages/vipcard/VipCard';
+import VipDescription from '@/pages/vipcard/sub/VipDescription';
+import UseCart from '@/pages/vipcard/sub/UseCart';
+import InvoiceRecord from '@/pages/vipcard/sub/InvoiceRecord';
 
 export default [
   {
@@ -123,6 +127,22 @@ export default [
       }, {
         path: 'hbHistory',
         component: HbHistory,
+      },
+    ],
+  }, {
+    path: '/vipcard',
+    name: 'vipcard',
+    component: VipCard,
+    children: [
+      {
+        path: 'vipDescription',
+        component: VipDescription,
+      }, {
+        path: 'useCart',
+        component: UseCart,
+      }, {
+        path: 'invoiceRecord',
+        component: InvoiceRecord,
       },
     ],
   }, {
