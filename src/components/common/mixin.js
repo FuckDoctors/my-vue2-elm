@@ -57,7 +57,7 @@ export const loadMore = {
         }, false);
 
         el.addEventListener('touchmove', () => {
-          loadMore();
+          execLoadMore();
         }, false);
 
         el.addEventListener('touchend', () => {

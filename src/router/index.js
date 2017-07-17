@@ -26,6 +26,7 @@ import VipCard from '@/pages/vipcard/VipCard';
 import VipDescription from '@/pages/vipcard/sub/VipDescription';
 import UseCart from '@/pages/vipcard/sub/UseCart';
 import InvoiceRecord from '@/pages/vipcard/sub/InvoiceRecord';
+import Shop from '@/pages/shop/Shop';
 
 export default [
   {
@@ -149,6 +150,16 @@ export default [
     path: '/service',
     name: 'service',
     component: Service,
+    children: [
+      {
+        path: 'question',
+        component: Question,
+      },
+    ],
+  }, {
+    path: '/shop',
+    name: 'shop',
+    component: Shop,
     children: [
       {
         path: 'question',

@@ -26,4 +26,4 @@ export const SAVE_ADDDETAIL = 'SAVE_ADDDETAIL';
 export const SAVE_ADDRESS = 'SAVE_ADDRESS';
 export const SAVE_QUESTION = 'SAVE_QUESTION';
 export const ADD_ADDRESS = 'ADD_ADDRESS';
-export const BUY_CART = 'BUY_CART';
+export const SHOPPING_CART = 'SHOPPING_CART';

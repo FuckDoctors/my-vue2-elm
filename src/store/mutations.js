@@ -32,7 +32,7 @@ import {
   SAVE_ADDDETAIL,
   SAVE_QUESTION,
   ADD_ADDRESS,
-  BUY_CART,
+  SHOPPING_CART,
 } from './mutation-types';
 
 export default {
@@ -237,7 +237,7 @@ export default {
     state.removeAddress = [obj, ...state.removeAddress];
   },
   // 会员卡价格纪录
-  [BUY_CART](state, price) {
+  [SHOPPING_CART](state, price) {
     state.cartPrice = price;
   },
 };
