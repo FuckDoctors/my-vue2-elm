@@ -1,6 +1,6 @@
  <template>
   <div class="rating_page">
-    <head-top head-title="搜索地址" go-back='true'></head-top>
+    <top-header header-title="搜索地址" go-back='true'></top-header>
     <section>
       <div class="add-detail">
         <input type="text" placeholder="请输入小区/写字楼/学校等" v-model="inputAdress">

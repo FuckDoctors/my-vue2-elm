@@ -12,6 +12,16 @@ import AddAddress from '@/pages/profile/address/AddAddress';
 import AddDetail from '@/pages/profile/address/AddDetail';
 import Service from '@/pages/service/Service';
 import Question from '@/pages/service/question/Question';
+import Points from '@/pages/points/Points';
+import PointDetail from '@/pages/points/Detail';
+import Balance from '@/pages/balance/Balance';
+import BalanceDetail from '@/pages/balance/Detail';
+import Benefit from '@/pages/benefit/Benefit';
+import Commend from '@/pages/benefit/sub/Commend';
+import Coupon from '@/pages/benefit/sub/Coupon';
+import Exchange from '@/pages/benefit/sub/Exchange';
+import HbDesciption from '@/pages/benefit/sub/HaobaoDescription';
+import HbHistory from '@/pages/benefit/sub/HaobaoHistory';
 
 export default [
   {
@@ -71,6 +81,48 @@ export default [
       }, {
         path: 'changeUserName',
         component: ChangeUserName,
+      },
+    ],
+  }, {
+    path: '/points',
+    name: 'points',
+    component: Points,
+    children: [
+      {
+        path: 'detail',
+        component: PointDetail,
+      },
+    ],
+  }, {
+    path: '/balance',
+    name: 'balance',
+    component: Balance,
+    children: [
+      {
+        path: 'detail',
+        component: BalanceDetail,
+      },
+    ],
+  }, {
+    path: '/benefit',
+    name: 'benefit',
+    component: Benefit,
+    children: [
+      {
+        path: 'commend',
+        component: Commend,
+      }, {
+        path: 'coupon',
+        component: Coupon,
+      }, {
+        path: 'exchange',
+        component: Exchange,
+      }, {
+        path: 'hbDesciption',
+        component: HbDesciption,
+      }, {
+        path: 'hbHistory',
+        component: HbHistory,
       },
     ],
   }, {
