@@ -27,6 +27,9 @@ import VipDescription from '@/pages/vipcard/sub/VipDescription';
 import UseCart from '@/pages/vipcard/sub/UseCart';
 import InvoiceRecord from '@/pages/vipcard/sub/InvoiceRecord';
 import Shop from '@/pages/shop/Shop';
+import ShopDetail from '@/pages/shop/detail/ShopDetail';
+import ShopSafe from '@/pages/shop/detail/ShopSafe';
+import FoodDetail from '@/pages/shop/detail/FoodDetail';
 
 export default [
   {
@@ -162,8 +165,20 @@ export default [
     component: Shop,
     children: [
       {
-        path: 'question',
-        component: Question,
+        path: 'shopDetail',
+        component: ShopDetail,
+        children: [
+          {
+            path: 'shopSafe',
+            component: ShopSafe,
+          },
+        ],
+      }, {
+        path: 'shopDetail',
+        component: ShopDetail,
+      }, {
+        path: 'foodDetail',
+        component: FoodDetail,
       },
     ],
   },

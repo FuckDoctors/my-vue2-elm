@@ -533,11 +533,11 @@ export default {
     },
     // 加入购物车，所需7个参数，商铺id，食品分类id，食品id，食品规格id，食品名字，食品价格，食品规格
     addToCart(categoryId, itemId, foodId, name, price, specs) {
-      this.ADD_CART({ shopid: this.shopId, categoryId, itemId, foodId, name, price, specs });
+      this.ADD_CART({ shopId: this.shopId, categoryId, itemId, foodId, name, price, specs });
     },
     // 移出购物车，所需7个参数，商铺id，食品分类id，食品id，食品规格id，食品名字，食品价格，食品规格
     removeOutCart(categoryId, itemId, foodId, name, price, specs) {
-      this.REDUCE_CART({ shopid: this.shopId, categoryId, itemId, foodId, name, price, specs });
+      this.REDUCE_CART({ shopId: this.shopId, categoryId, itemId, foodId, name, price, specs });
     },
     /**
      * 初始化和shopCart变化时，重新获取购物车改变过的数据，赋值 categoryNum，totalPrice，cartFoodList,

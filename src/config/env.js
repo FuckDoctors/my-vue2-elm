@@ -13,6 +13,9 @@ const baseUrl = 'http://cangdu.org:8001';
 const routerMode = 'hash';
 const imgBaseUrl = 'http://images.cangdu.org/';
 
+const localapi = null;
+const proapi = null;
+
 if (process.env.NODE_ENV === 'development') {
   // baseUrl = 'http://cangdu.org:8001';
 } else if (process.env.NODE_ENV === 'production') {
@@ -23,4 +26,6 @@ export {
   baseUrl,
   routerMode,
   imgBaseUrl,
+  localapi,
+  proapi,
 };
