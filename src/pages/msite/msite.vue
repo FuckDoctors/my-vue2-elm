@@ -44,7 +44,7 @@
 import { mapMutations } from 'vuex';
 import topHeader from '@/components/header/Header';
 import footerNavi from '@/components/footer/Footer';
-import shoppingList from '@/components/common/ShoppingList';
+import shoppingList from '@/components/common/ShopList';
 import { msiteAdress, msiteFoodTypes, guessCity } from '@/service/getData';
 import Swiper from 'swiper';
 import 'swiper/dist/css/swiper.min.css';

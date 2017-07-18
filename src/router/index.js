@@ -30,6 +30,8 @@ import Shop from '@/pages/shop/Shop';
 import ShopDetail from '@/pages/shop/detail/ShopDetail';
 import ShopSafe from '@/pages/shop/detail/ShopSafe';
 import FoodDetail from '@/pages/shop/detail/FoodDetail';
+import Food from '@/pages/food/Food';
+import Explore from '@/pages/explore/Explore';
 
 export default [
   {
@@ -181,5 +183,13 @@ export default [
         component: FoodDetail,
       },
     ],
+  }, {
+    path: '/food',
+    name: 'food',
+    component: Food,
+  }, {
+    path: '/explore',
+    name: 'explore',
+    component: Explore,
   },
 ];
