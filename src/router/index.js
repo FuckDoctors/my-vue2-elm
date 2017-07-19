@@ -32,6 +32,17 @@ import ShopSafe from '@/pages/shop/detail/ShopSafe';
 import FoodDetail from '@/pages/shop/detail/FoodDetail';
 import Food from '@/pages/food/Food';
 import Explore from '@/pages/explore/Explore';
+import Order from '@/pages/order/Order';
+import OrderDetail from '@/pages/order/OrderDetail';
+import ConfirmOrder from '@/pages/confirmOrder/ConfirmOrder';
+import ChooseAddress from '@/pages/confirmOrder/sub/ChooseAddress';
+import Invoice from '@/pages/confirmOrder/sub/Invoice';
+import Payment from '@/pages/confirmOrder/sub/Payment';
+import Remark from '@/pages/confirmOrder/sub/Remark';
+import UserValidation from '@/pages/confirmOrder/sub/UserValidation';
+import AddOrderAddress from '@/pages/confirmOrder/sub/address/AddAddress';
+import SearchOrderAddress from '@/pages/confirmOrder/sub/address/SearchAddress';
+import Download from '@/pages/profile/Download';
 
 export default [
   {
@@ -191,5 +202,53 @@ export default [
     path: '/explore',
     name: 'explore',
     component: Explore,
+  }, {
+    path: '/order',
+    name: 'order',
+    component: Order,
+    children: [
+      {
+        path: 'orderDetail',
+        component: OrderDetail,
+      },
+    ],
+  }, {
+    path: '/confirmOrder',
+    name: 'confirmOrder',
+    component: ConfirmOrder,
+    children: [
+      {
+        path: 'chooseAddress',
+        component: ChooseAddress,
+        children: [
+          {
+            path: 'addAddress',
+            component: AddOrderAddress,
+            children: [
+              {
+                path: 'searchAddress',
+                component: SearchOrderAddress,
+              },
+            ],
+          },
+        ],
+      }, {
+        path: 'invoice',
+        component: Invoice,
+      }, {
+        path: 'payment',
+        component: Payment,
+      }, {
+        path: 'remark',
+        component: Remark,
+      }, {
+        path: 'userValidation',
+        component: UserValidation,
+      },
+    ],
+  }, {
+    path: '/download',
+    name: 'download',
+    component: Download,
   },
 ];
