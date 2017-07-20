@@ -7,4 +7,12 @@ wh $1, $2
 sc\(([\w#%.]+),\s+([\w#%.$]+)\)
 fsc $1, $2
 
+Lazy Loading Routes
+https://router.vuejs.org/en/advanced/lazy-loading.html
+This is how to define an async component that will be automatically code-split by webpack:
+const Foo = () => import('./Foo.vue')
+原来的形式转出Lazy Loading的形式:
+import\s+(\w+)\s+from\s+'(.+)'
+const $1 = () => import('$2')
+
 
