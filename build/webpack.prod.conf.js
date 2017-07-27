@@ -87,6 +87,44 @@ var webpackConfig = merge(baseWebpackConfig, {
       name: 'manifest',
       chunks: ['vendor']
     }),
+
+    // Webpack 大法之 Code Splitting
+    // https://zhuanlan.zhihu.com/p/26710831
+    // 但是照着原文做不起作用，大家说2.4.1是可以的，但以后的都不行。
+    // 查阅官方文档，未发现解决方案，最后在github/webpack的issues里找到了答案
+    // commonsChunkPlugins async options Invalid #5101
+    // https://github.com/webpack/webpack/issues/5101
+    // 上面的hacke2回答给出了解决方案，参考#4850:
+    // webpack 2.5.1 can't use async CommonsChunkPlugin #4850
+    // https://github.com/webpack/webpack/issues/4850
+    // #4850中的iNikNik给了解决方案，参考#5109的comment
+    // you should specify name option to CommonChunksPlugin same as your entry point (initial chunk)
+    // CommonsChunkPlugin in async mode doesn't select initial chunks caused a bug in expected behvaior #5109
+    // https://github.com/webpack/webpack/issues/5109#issuecomment-311154920
+    // 解决办法就是，指定上name，并且把name设为entry的名。
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'app',
+      async: 'common-in-lazy',
+      minChunks: ({ resource, context } = {}) => (
+        context &&
+        context.indexOf('node_modules') !== -1 &&
+        resource &&
+        (
+          // axios没有从vender里剥离出来，axios没有通过import()导入的原因！？
+          /axios/.test(resource) ||
+          /swiper/.test(resource)
+        )
+      ),
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'app',
+      async: 'used-twice',
+      minChunks: (module, count) => (
+        // module.resource && count >= 2
+        count >= 2
+      ),
+    }),
+
     // copy custom static assets
     new CopyWebpackPlugin([
       {
