@@ -8,7 +8,7 @@ import {
 // http://blog.csdn.net/kittyjie/article/details/50642558
 
 // 使用这种export default时，不能使用import {fetch, fetch2}，不识别fetch，没指定名字。
-// 可以这样import，imprt {default as fetch} from xxx，
+// 可以这样import，import {default as fetch} from xxx，
 // 或者使用import fetch, {fetch2} from xxx。
 export default (url = '', data = {}, type = 'GET', options = {}) => {
   const reqType = type.toUpperCase();

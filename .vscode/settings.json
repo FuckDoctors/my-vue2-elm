@@ -6,6 +6,9 @@
     "css.validate": false,
     "scss.validate": false,
 
+     // Validate css/scss/less/postcss in <style>
+    "vetur.validation.style": false,
+
     // vscode中的vue文件中emmet进行tab键不起作用
     // http://www.cnblogs.com/dfyg-xiaoxiao/p/6897147.html
     "emmet.syntaxProfiles": {
